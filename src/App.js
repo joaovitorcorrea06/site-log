@@ -11,17 +11,20 @@ function App() {
   });
 
   const [filtro, setfiltro] = useState('TODOS');
-  const [Dados, setDados] = useState(listarLog);
+  const [Dados, setDados] = useState([]);
+  // setDados(listarLog);
 
-  function busca(dado) {
-    const res = listarLog.map(item)
-    if (item.type = dado){
-      return item;
-    }
+  function busca(tipo) {
+    console.log(tipo)
+    let res = listarLog.map(function(item){
+      if (item.type === tipo){
+        console.log(item)
+        return item;
+      }})
+      console.log(res)
     setDados(res)
-
   }
-     // for each
+
 
   return (
 
@@ -37,10 +40,12 @@ function App() {
           <Dropdown.Menu>
             <Dropdown.Item onClick={()=>{
               setfiltro('ERRO')
+              busca('ERRO')
             }} >ERRO</Dropdown.Item>
               
             <Dropdown.Item onClick={()=>{
               setfiltro ('INFO')
+              busca('INFO')
             }}>INFO</Dropdown.Item>
 
             <Dropdown.Item onClick={()=>{
@@ -74,7 +79,7 @@ function App() {
           
         </Table>
 
-        <p>teste {filtro}</p>
+        <p>Filtro: {filtro}</p>
         
       </div>
     </Container>
