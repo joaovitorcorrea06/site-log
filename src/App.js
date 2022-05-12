@@ -11,19 +11,25 @@ function App() {
   });
 
   const [filtro, setfiltro] = useState('TODOS');
-  const [Dados, setDados] = useState([]);
-  // setDados(listarLog);
+  const [Dados, setDados] = useState(listarLog);
+  const [contTotal, setContTotal] = useState(0);
+  const [contErro, setContErro] = useState(0);
+  const [contDebug, setContDebug] = useState(0);
+  const [contInfo, setContInfo] = useState(0);
+
 
   function busca(tipo) {
-    console.log(tipo)
-    let res = listarLog.map(function(item){
+    setfiltro(tipo)
+    let res = listarLog.filter(function(item){
+      if (tipo === "TODOS")
+      return item;
       if (item.type === tipo){
-        console.log(item)
         return item;
       }})
-      console.log(res)
     setDados(res)
   }
+
+  
 
 
   return (
@@ -34,26 +40,33 @@ function App() {
         <br></br>
         <Dropdown>
           <Dropdown.Toggle variant="success" id="dropdown-basic">
-            FILTRO
+            FILTRO: {filtro}
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
             <Dropdown.Item onClick={()=>{
-              setfiltro('ERRO')
               busca('ERRO')
             }} >ERRO</Dropdown.Item>
               
             <Dropdown.Item onClick={()=>{
-              setfiltro ('INFO')
               busca('INFO')
             }}>INFO</Dropdown.Item>
 
             <Dropdown.Item onClick={()=>{
-              setfiltro ('DEBUG')
+              busca('DEBUG')
             }}>DEBUG</Dropdown.Item>
+
+            <Dropdown.Item onClick={()=>{
+              busca("TODOS")
+            }}>TODOS</Dropdown.Item>
 
           </Dropdown.Menu>
         </Dropdown>
+        <br></br>
+        <p> Total: {contTotal}</p>
+        <p> Erros: {contErro}</p>
+        <p> Debugs: {contDebug}</p>
+        <p> Info: {contInfo}</p>
         <br></br>
 
         <Table bordered hover>
