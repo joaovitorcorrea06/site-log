@@ -71,8 +71,9 @@ function App() {
           </Dropdown.Menu>
         </Dropdown>
         </Col>
-        <br></br>
-        <br></br>
+        <Col>
+        </Col>
+
         <Col lg={1.5}>
         <Button size='lg' variant="info" onClick={()=>{busca('TODOS')}}> TOTAL: {counterTotal}</Button>
         </Col>
