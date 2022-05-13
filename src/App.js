@@ -1,7 +1,6 @@
 import './App.css';
-import axios from 'axios';
 import { listarLog } from './listar-log';
-import { Form, Col, Table, Container, Dropdown, Row, Button } from 'react-bootstrap';
+import { Col, Table, Container, Dropdown, Row, Button } from 'react-bootstrap';
 import { useState } from 'react';
 
 function App() {
@@ -55,6 +54,11 @@ function App() {
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
+
+            <Dropdown.Item onClick={()=>{
+              busca("TODOS")
+            }}>TODOS</Dropdown.Item>
+
             <Dropdown.Item onClick={()=>{
               busca('ERRO')
             }} >ERRO</Dropdown.Item>
@@ -66,10 +70,6 @@ function App() {
             <Dropdown.Item onClick={()=>{
               busca('DEBUG')
             }}>DEBUG</Dropdown.Item>
-
-            <Dropdown.Item onClick={()=>{
-              busca("TODOS")
-            }}>TODOS</Dropdown.Item>
 
           </Dropdown.Menu>
         </Dropdown>
