@@ -1,7 +1,7 @@
 import './App.css';
 import axios from 'axios';
 import { listarLog } from './listar-log';
-import { Form, Col, Table, Container, Dropdown, Row } from 'react-bootstrap';
+import { Form, Col, Table, Container, Dropdown, Row, Button } from 'react-bootstrap';
 import { useState } from 'react';
 
 function App() {
@@ -77,16 +77,16 @@ function App() {
         <br></br>
         <br></br>
        <Col>
-        <p> Total: {counterTotal}</p>
+        <Button variant="info" onClick={()=>{busca('TODOS')}}> Total: {counterTotal}</Button>
         </Col>
         <Col>
-        <p> Erros: {counterErro}</p>
+        <Button variant="danger" onClick={()=>{busca('ERRO')}}> Erros: {counterErro}</Button>
         </Col>
         <Col>
-        <p> Debugs: {counterDebug}</p>
+        <Button variant="primary" onClick={()=>{busca('DEBUG')}}> Debugs: {counterDebug}</Button>
         </Col>
         <Col>
-        <p> Info: {counterInfo}</p>
+        <Button variant="warning" onClick={()=>{busca('INFO')}}> Info: {counterInfo}</Button>
         </Col>
         <br></br>
         
@@ -102,10 +102,33 @@ function App() {
           </tr>
         </thead>
           {Dados.map(function(dado){
+            if (dado.type=== "ERRO")
             return (
               <tbody>
               <tr>
-                <td>{dado.type}</td>
+                <td className='bg-danger'>{dado.type}</td>
+                <td>{dado.data}</td>
+                <td>{dado.time}</td>
+                <td>{dado.mensagem}</td>
+              </tr>
+            </tbody> )
+
+            if (dado.type=== "DEBUG")
+            return (
+              <tbody>
+              <tr>
+                <td className='bg-primary'>{dado.type}</td>
+                <td>{dado.data}</td>
+                <td>{dado.time}</td>
+                <td>{dado.mensagem}</td>
+              </tr>
+            </tbody>)
+
+            if (dado.type=== "INFO")
+            return (
+              <tbody>
+              <tr>
+                <td className='bg-warning'>{dado.type}</td>
                 <td>{dado.data}</td>
                 <td>{dado.time}</td>
                 <td>{dado.mensagem}</td>
