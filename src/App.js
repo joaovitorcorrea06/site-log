@@ -1,7 +1,7 @@
 import './App.css';
 import axios from 'axios';
 import { listarLog } from './listar-log';
-import { Form, Col, Table, Container, Dropdown } from 'react-bootstrap';
+import { Form, Col, Table, Container, Dropdown, Row } from 'react-bootstrap';
 import { useState } from 'react';
 
 function App() {
@@ -12,10 +12,21 @@ function App() {
 
   const [filtro, setfiltro] = useState('TODOS');
   const [Dados, setDados] = useState(listarLog);
-  const [contTotal, setContTotal] = useState(0);
-  const [contErro, setContErro] = useState(0);
-  const [contDebug, setContDebug] = useState(0);
-  const [contInfo, setContInfo] = useState(0);
+
+
+  let counterErro = 0;
+  let counterDebug = 0;
+  let counterInfo = 0;
+  let counterTotal = 0;
+
+
+  for (let i = 0; i < listarLog.length; i++){
+    if (listarLog[i].type === 'ERRO') counterErro++;
+    if (listarLog[i].type === 'DEBUG') counterDebug++;
+    if (listarLog[i].type === 'INFO') counterInfo++;
+    counterTotal++;
+
+  }
 
 
   function busca(tipo) {
@@ -29,15 +40,15 @@ function App() {
     setDados(res)
   }
 
-  
-
 
   return (
 
     <Container fluid>
       <div>
-        <h1> Log </h1>
-        <br></br>
+         <h1> Log </h1>
+        
+        <Row>
+          <Col>
         <Dropdown>
           <Dropdown.Toggle variant="success" id="dropdown-basic">
             FILTRO: {filtro}
@@ -62,12 +73,24 @@ function App() {
 
           </Dropdown.Menu>
         </Dropdown>
+        </Col>
         <br></br>
-        <p> Total: {contTotal}</p>
-        <p> Erros: {contErro}</p>
-        <p> Debugs: {contDebug}</p>
-        <p> Info: {contInfo}</p>
         <br></br>
+       <Col>
+        <p> Total: {counterTotal}</p>
+        </Col>
+        <Col>
+        <p> Erros: {counterErro}</p>
+        </Col>
+        <Col>
+        <p> Debugs: {counterDebug}</p>
+        </Col>
+        <Col>
+        <p> Info: {counterInfo}</p>
+        </Col>
+        <br></br>
+        
+        </Row>
 
         <Table bordered hover>
         <thead>

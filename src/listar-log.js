@@ -8,6 +8,12 @@ export let listarLog =
           "mensagem": "minha mensagem"
       },
       {
+          "data": "2022-05-04",
+          "time": "08:05:00",
+          "type": "DEBUG",
+          "mensagem": "minha mensagem"
+      },
+      {
           "data": "2022-05-02",
           "time": "08:06:00",
           "type": "INFO",
