@@ -1,6 +1,6 @@
 import './App.css';
 import { listarLog } from './listar-log';
-import { Col, Table, Container, Dropdown, Row, Button } from 'react-bootstrap';
+import { Col, Table, Container, Dropdown, Row, Button, Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { useState } from 'react';
 
 function App() {
@@ -42,10 +42,9 @@ function App() {
 
     <Container fluid>
       <div>
-         <h1> Log </h1>
         
-        <Row>
-          <Col>
+        <Row className='bg-dark'>
+          <Col sm={8}>
         <Dropdown>
           <Dropdown.Toggle variant="success" id="dropdown-basic">
             FILTRO: {filtro}
@@ -74,16 +73,16 @@ function App() {
         </Col>
         <br></br>
         <br></br>
-       <Col>
+        <Col lg={1.5}>
         <Button variant="info" onClick={()=>{busca('TODOS')}}> TOTAL: {counterTotal}</Button>
         </Col>
-        <Col>
+        <Col lg={1.5}>
         <Button variant="danger" onClick={()=>{busca('ERRO')}}> ERROS: {counterErro}</Button>
         </Col>
-        <Col>
+        <Col lg={1.5}>
         <Button variant="primary" onClick={()=>{busca('DEBUG')}}> DEBUGS : {counterDebug}</Button>
         </Col>
-        <Col>
+        <Col lg={1.5}>
         <Button variant="warning" onClick={()=>{busca('INFO')}}> INFO: {counterInfo}</Button>
         </Col>
         <br></br>
