@@ -43,16 +43,16 @@ function App() {
     <Container fluid>
       <div>
         
-        <Row className='bg-dark'>
-          <Col sm={8}>
+        <Row className='bg-dark align-items-center'>
+          <Col sm={7}>
         <Dropdown>
-          <Dropdown.Toggle variant="success" id="dropdown-basic">
+          <Dropdown.Toggle variant="success" id="dropdown-basic" size='lg'>
             FILTRO: {filtro}
           </Dropdown.Toggle>
 
-          <Dropdown.Menu>
+          <Dropdown.Menu >
 
-            <Dropdown.Item onClick={()=>{
+            <Dropdown.Item  onClick={()=>{
               busca("TODOS")
             }}>TODOS</Dropdown.Item>
 
@@ -74,16 +74,16 @@ function App() {
         <br></br>
         <br></br>
         <Col lg={1.5}>
-        <Button variant="info" onClick={()=>{busca('TODOS')}}> TOTAL: {counterTotal}</Button>
+        <Button size='lg' variant="info" onClick={()=>{busca('TODOS')}}> TOTAL: {counterTotal}</Button>
         </Col>
         <Col lg={1.5}>
-        <Button variant="danger" onClick={()=>{busca('ERRO')}}> ERROS: {counterErro}</Button>
+        <Button size='lg' variant="danger" onClick={()=>{busca('ERRO')}}> ERROS: {counterErro}</Button>
         </Col>
         <Col lg={1.5}>
-        <Button variant="primary" onClick={()=>{busca('DEBUG')}}> DEBUGS : {counterDebug}</Button>
+        <Button size='lg' variant="primary" onClick={()=>{busca('DEBUG')}}> DEBUGS : {counterDebug}</Button>
         </Col>
         <Col lg={1.5}>
-        <Button variant="warning" onClick={()=>{busca('INFO')}}> INFO: {counterInfo}</Button>
+        <Button size='lg' variant="warning" onClick={()=>{busca('INFO')}}> INFO: {counterInfo}</Button>
         </Col>
         <br></br>
         
