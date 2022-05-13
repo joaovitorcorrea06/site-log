@@ -1,6 +1,6 @@
 import './App.css';
 import { listarLog } from './listar-log';
-import { Col, Table, Container, Dropdown, Row, Button, Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Col, Table, Container, Dropdown, Row, Button, Navbar, Nav, NavDropdown, InputGroup } from 'react-bootstrap';
 import { useState } from 'react';
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
 
   const [filtro, setfiltro] = useState('TODOS');
   const [Dados, setDados] = useState(listarLog);
+  const [filtroInput, setFiltroInput] = useState('test');
 
   let counterErro = 0;
   let counterDebug = 0;
@@ -45,7 +46,7 @@ function App() {
         
         <Row className='bg-dark align-items-center'>
           <Col sm={7}>
-        <Dropdown>
+        {/* <Dropdown>
           <Dropdown.Toggle variant="success" id="dropdown-basic" size='lg'>
             FILTRO: {filtro}
           </Dropdown.Toggle>
@@ -69,7 +70,11 @@ function App() {
             }}>DEBUG</Dropdown.Item>
 
           </Dropdown.Menu>
-        </Dropdown>
+        </Dropdown> */}
+        <input onChange={(e)=>{
+          setFiltroInput(e.target.value)
+          }}></input>
+        
         </Col>
         <Col>
         </Col>
@@ -89,6 +94,7 @@ function App() {
         <br></br>
         
         </Row>
+        <p>{filtroInput}</p>
 
         <Table bordered hover table-sm>
         <thead >
