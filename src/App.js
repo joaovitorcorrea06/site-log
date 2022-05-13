@@ -12,7 +12,7 @@ function App() {
 
   const [filtro, setfiltro] = useState('TODOS');
   const [Dados, setDados] = useState(listarLog);
-  const [filtroInput, setFiltroInput] = useState('test');
+  const [filtroInput, setFiltroInput] = useState('');
 
   let counterErro = 0;
   let counterDebug = 0;
@@ -44,7 +44,7 @@ function App() {
     <Container fluid>
       <div>
         
-        <Row className='bg-dark align-items-center'>
+        <Navbar className='bg-dark align-items-center'  sticky="top">
           <Col sm={7}>
         {/* <Dropdown>
           <Dropdown.Toggle variant="success" id="dropdown-basic" size='lg'>
@@ -73,6 +73,7 @@ function App() {
         </Dropdown> */}
         <input onChange={(e)=>{
           setFiltroInput(e.target.value)
+          
           }}></input>
         
         </Col>
@@ -80,27 +81,27 @@ function App() {
         </Col>
 
         <Col lg={1.5}>
-        <Button size='lg' variant="info" onClick={()=>{busca('TODOS')}}> TOTAL: {counterTotal}</Button>
+        <Button variant="info" onClick={()=>{busca('TODOS')}}> TOTAL: {counterTotal}</Button>
         </Col>
         <Col lg={1.5}>
-        <Button size='lg' variant="danger" onClick={()=>{busca('ERRO')}}> ERROS: {counterErro}</Button>
+        <Button variant="danger" onClick={()=>{busca('ERRO')}}> ERROS: {counterErro}</Button>
         </Col>
         <Col lg={1.5}>
-        <Button size='lg' variant="primary" onClick={()=>{busca('DEBUG')}}> DEBUGS : {counterDebug}</Button>
+        <Button variant="primary" onClick={()=>{busca('DEBUG')}}> DEBUGS : {counterDebug}</Button>
         </Col>
         <Col lg={1.5}>
-        <Button size='lg' variant="warning" onClick={()=>{busca('INFO')}}> INFO: {counterInfo}</Button>
+        <Button variant="warning" onClick={()=>{busca('INFO')}}> INFO: {counterInfo}</Button>
         </Col>
         <br></br>
         
-        </Row>
+        </Navbar>
         <p>{filtroInput}</p>
 
         <Table bordered hover table-sm>
         <thead >
           <tr>
             <th className='col-1'>Type</th>
-            <th className='col-1'>Data</th>
+            <th className='col-1'>Data </th>
             <th className='col-1'>Hora</th>
             <th >Mensagem</th>
           </tr>
