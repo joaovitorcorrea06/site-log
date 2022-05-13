@@ -23,7 +23,7 @@ export let listarLog =
           "data": "2022-05-03",
           "time": "08:07:00",
           "type": "ERRO",
-          "mensagem": "minha mensagem de teste"
+          "mensagem": "minha mensagem de teste "
       },
       {
           "data": "2022-05-05",

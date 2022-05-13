@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 function App() {
 
+  //Ordenação descrescente pela data
   listarLog.sort(function (a,b){
     return (new Date(b.data) - new Date(a.data));
   });
@@ -12,22 +13,20 @@ function App() {
   const [filtro, setfiltro] = useState('TODOS');
   const [Dados, setDados] = useState(listarLog);
 
-
   let counterErro = 0;
   let counterDebug = 0;
   let counterInfo = 0;
   let counterTotal = 0;
 
-
+  //Contador 
   for (let i = 0; i < listarLog.length; i++){
     if (listarLog[i].type === 'ERRO') counterErro++;
     if (listarLog[i].type === 'DEBUG') counterDebug++;
     if (listarLog[i].type === 'INFO') counterInfo++;
     counterTotal++;
-
   }
 
-
+  //Filtrar por tipo
   function busca(tipo) {
     setfiltro(tipo)
     let res = listarLog.filter(function(item){
@@ -38,7 +37,6 @@ function App() {
       }})
     setDados(res)
   }
-
 
   return (
 
@@ -77,28 +75,28 @@ function App() {
         <br></br>
         <br></br>
        <Col>
-        <Button variant="info" onClick={()=>{busca('TODOS')}}> Total: {counterTotal}</Button>
+        <Button variant="info" onClick={()=>{busca('TODOS')}}> TOTAL: {counterTotal}</Button>
         </Col>
         <Col>
-        <Button variant="danger" onClick={()=>{busca('ERRO')}}> Erros: {counterErro}</Button>
+        <Button variant="danger" onClick={()=>{busca('ERRO')}}> ERROS: {counterErro}</Button>
         </Col>
         <Col>
-        <Button variant="primary" onClick={()=>{busca('DEBUG')}}> Debugs: {counterDebug}</Button>
+        <Button variant="primary" onClick={()=>{busca('DEBUG')}}> DEBUGS : {counterDebug}</Button>
         </Col>
         <Col>
-        <Button variant="warning" onClick={()=>{busca('INFO')}}> Info: {counterInfo}</Button>
+        <Button variant="warning" onClick={()=>{busca('INFO')}}> INFO: {counterInfo}</Button>
         </Col>
         <br></br>
         
         </Row>
 
-        <Table bordered hover>
-        <thead>
+        <Table bordered hover table-sm>
+        <thead >
           <tr>
-            <th>Type</th>
-            <th>Data</th>
-            <th>Hora</th>
-            <th>Mensagem</th>
+            <th className='col-1'>Type</th>
+            <th className='col-1'>Data</th>
+            <th className='col-1'>Hora</th>
+            <th >Mensagem</th>
           </tr>
         </thead>
           {Dados.map(function(dado){
@@ -106,10 +104,10 @@ function App() {
             return (
               <tbody>
               <tr>
-                <td className='bg-danger'>{dado.type}</td>
-                <td>{dado.data}</td>
-                <td>{dado.time}</td>
-                <td>{dado.mensagem}</td>
+                <td className='table-danger' >{dado.type}</td>
+                <td >{dado.data}</td>
+                <td >{dado.time}</td>
+                <td >{dado.mensagem}</td>
               </tr>
             </tbody> )
 
@@ -117,10 +115,10 @@ function App() {
             return (
               <tbody>
               <tr>
-                <td className='bg-primary'>{dado.type}</td>
-                <td>{dado.data}</td>
-                <td>{dado.time}</td>
-                <td>{dado.mensagem}</td>
+                <td className='table-primary' >{dado.type}</td>
+                <td >{dado.data}</td>
+                <td >{dado.time}</td>
+                <td >{dado.mensagem}</td>
               </tr>
             </tbody>)
 
@@ -128,10 +126,10 @@ function App() {
             return (
               <tbody>
               <tr>
-                <td className='bg-warning'>{dado.type}</td>
-                <td>{dado.data}</td>
-                <td>{dado.time}</td>
-                <td>{dado.mensagem}</td>
+                <td className='table-warning' >{dado.type}</td>
+                <td >{dado.data}</td>
+                <td >{dado.time}</td>
+                <td >{dado.mensagem}</td>
               </tr>
             </tbody> 
           )})} 
