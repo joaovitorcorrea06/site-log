@@ -39,6 +39,8 @@ function App() {
     setDados(res)
   }
 
+//
+
   return (
 
     <Container fluid>
@@ -72,8 +74,7 @@ function App() {
           </Dropdown.Menu>
         </Dropdown> */}
         <input onChange={(e)=>{
-          setFiltroInput(e.target.value)
-          
+          setFiltroInput(e.target.value)          
           }}></input>
         
         </Col>
