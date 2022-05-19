@@ -2,6 +2,8 @@ import './App.css';
 import { listarLog } from './listar-log';
 import { Col, Table, Container, Dropdown, Row, Button, Navbar, Nav, NavDropdown, InputGroup } from 'react-bootstrap';
 import { useState } from 'react';
+import { Chart } from "react-google-charts";
+import { Grafico } from './grafico/grafico';
 
 function App() {
 
@@ -97,6 +99,7 @@ function App() {
         
         </Navbar>
         <p>{filtroInput}</p>
+        <Grafico></Grafico>
 
         <Table bordered hover table-sm>
         <thead >
