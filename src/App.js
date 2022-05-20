@@ -15,6 +15,7 @@ function App() {
   const [filtro, setfiltro] = useState('TODOS');
   const [Dados, setDados] = useState(listarLog);
   const [filtroInput, setFiltroInput] = useState('');
+  
 
   let counterErro = 0;
   let counterDebug = 0;

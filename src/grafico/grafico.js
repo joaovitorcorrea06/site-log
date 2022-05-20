@@ -3,6 +3,8 @@ import { Chart } from "react-google-charts";
 import { graficoLog } from "./grafico-log";
 
 
+
+
   let counterTrace = 0;
   let counterDebug = 0;
   let counterInfo = 0;
@@ -11,25 +13,6 @@ import { graficoLog } from "./grafico-log";
   let counterError = 0;
   let counterFatal = 0;
   let dia = 1;
-
-
-  graficoLog.map(function(dado){
-    if (dado.date=== new Date(ano, mes)){
-      if (dado.date===new Date(ano,mes,dia)){
-        for (let i = 0; i < graficoLog.length; i++) {
-          if (graficoLog[i].method === 'TRACE') counterTrace++;
-          if (graficoLog[i].method === 'DEBUG') counterDebug++;
-          if (graficoLog[i].method === 'INFO') counterInfo++;
-          if (graficoLog[i].method === 'SUCCESS') counterSuccess++;
-          if (graficoLog[i].method === 'WARN') counterWarn++;
-          if (graficoLog[i].method === 'ERROR') counterError++;
-          if (graficoLog[i].method === 'FATAL') counterFatal++;
-          return(
-            setGrafico(...+[dia.toString,counterTrace,counterDebug,counterInfo,counterSuccess,counterWarn,counterError,counterFatal])
-          )
-      }}}};
-
-
 
   
   // for (let i = 0; i < graficoLog.length; i++) {
@@ -46,8 +29,8 @@ import { graficoLog } from "./grafico-log";
 
 export let data = [
   ["Dia", "TRACE", "DEBUG", "INFO", "SUCCESS", "WARN", "ERROR", "FATAL"],
-  ["01", 1,2,3,5,4,6,7],
-  ["02", counterTrace,counterDebug,counterInfo,counterSuccess,counterWarn,counterError,counterFatal],
+  // ["01", 1,2,3,5,4,6,7],
+  // ["02", counterTrace,counterDebug,counterInfo,counterSuccess,counterWarn,counterError,counterFatal],
   // ["03", 1,2,3,5,4,6,7],
   // ["04", 5,2,6,8,4,5,9],
   // ["05", 1,2,3,5,4,6,7],
@@ -89,11 +72,25 @@ export const options = {
 
 export function Grafico() {
 
-  const [ano, setAno] = useState('');
-  const [mes,setMes] = useState('');
-  const [grafico, setGrafico] = useState([]);
+  const [ano, setAno] = useState(2022);
+  const [mes,setMes] = useState(1);
+  const [grafico, setGrafico] = useState(data);
 
-  
+  graficoLog.map(function(dado){
+    if (dado.date=== new Date(ano, mes)){
+      if (dado.date=== new Date(ano,mes,dia) && dia <= 31){ 
+          if (dado.method === 'TRACE') counterTrace++;
+          if (dado.method === 'DEBUG') counterDebug++;
+          if (dado.method === 'INFO') counterInfo++;
+          if (dado.method === 'SUCCESS') counterSuccess++;
+          if (dado.method === 'WARN') counterWarn++;
+          if (dado.method === 'ERROR') counterError++;
+          if (dado.method === 'FATAL') counterFatal++;
+          setGrafico([...+[dia.toString,counterTrace,counterDebug,counterInfo,counterSuccess,counterWarn,counterError,counterFatal]]);
+          dia = dia + 1;
+      }}
+    }
+
 
   return (
     <>
