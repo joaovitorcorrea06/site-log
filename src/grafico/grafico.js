@@ -72,15 +72,14 @@ export function AddDate(ADate, AType) {
     let newDataShow = dataShow.map((info) => {
       if (info[0] === ADate) {
         found = true;
-        info[1] += 1;
 
-        if (AType === "DEBUG") info[2] += 1;
-        if (AType === "ERROR") info[3] += 1;
-        if (AType === "TRACE") info[4] += 1;
-        if (AType === "INFO") info[5] += 1;
-        if (AType === "SUCCESS") info[6] += 1;
-        if (AType === "WARN") info[7] += 1;
-        if (AType === "FATAL") info[8] += 1;
+        if (AType === "DEBUG") info[1] += 1;
+        if (AType === "ERROR") info[2] += 1;
+        if (AType === "TRACE") info[3] += 1;
+        if (AType === "INFO") info[4] += 1;
+        if (AType === "SUCCESS") info[5] += 1;
+        if (AType === "WARN") info[6] += 1;
+        if (AType === "FATAL") info[7] += 1;
         return info;
       } else return info;
     });
@@ -104,7 +103,6 @@ export function AddDate(ADate, AType) {
 
       dataShow.push([
         ADate,
-        1,
         DebugCount,
         ErrorCount,
         TraceCount,
@@ -134,7 +132,6 @@ export function AddDate(ADate, AType) {
     dataShow = [
       [
         "Year",
-        "Todos",
         "Debug",
         "Error",
         "Trace",
@@ -145,7 +142,6 @@ export function AddDate(ADate, AType) {
       ],
       [
         ADate,
-        1,
         DebugCount,
         ErrorCount,
         TraceCount,
@@ -168,7 +164,7 @@ Start();
 
 
 export const options = {
-  title: "Requisições",
+  title: "Por tipo",
   hAxis: { title: "Dia", titleTextStyle: { color: "#333" } },
   vAxis: { minValue: 0 },
   chartArea: { width: "70%", height: "70%" },

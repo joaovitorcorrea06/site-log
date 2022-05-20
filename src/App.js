@@ -4,6 +4,7 @@ import { Col, Table, Container, Dropdown, Row, Button, Navbar, Nav, NavDropdown,
 import { useState } from 'react';
 import { Chart } from "react-google-charts";
 import { Grafico } from './grafico/grafico';
+import { GraficoTodos } from './grafico/grafico-todos'
 
 function App() {
 
@@ -15,6 +16,8 @@ function App() {
   const [filtro, setfiltro] = useState('TODOS');
   const [Dados, setDados] = useState(listarLog);
   const [filtroInput, setFiltroInput] = useState('');
+  const [grafico, setGrafico] = useState(true);
+
   
 
   let counterErro = 0;
@@ -99,8 +102,17 @@ function App() {
         <br></br>
         
         </Navbar>
+        <Button>Total</Button>
+
+        <Button>Por tipo</Button>
+
         <p>{filtroInput}</p>
+    
         <Grafico></Grafico>
+    
+        <GraficoTodos></GraficoTodos>
+    
+
 
         <Table bordered hover table-sm>
         <thead >
