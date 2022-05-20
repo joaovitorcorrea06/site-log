@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Chart } from "react-google-charts";
 import { graficoLog } from "./grafico-log";
 
@@ -10,24 +10,44 @@ import { graficoLog } from "./grafico-log";
   let counterWarn = 0;
   let counterError = 0;
   let counterFatal = 0;
-  let dia = 0;
+  let dia = 1;
 
-  for (let i = 0; i < graficoLog.length; i++) {
-    if (graficoLog[i].method === 'TRACE') counterTrace++;
-    if (graficoLog[i].method === 'DEBUG') counterDebug++;
-    if (graficoLog[i].method === 'INFO') counterInfo++;
-    if (graficoLog[i].method === 'SUCCESS') counterSuccess++;
-    if (graficoLog[i].method === 'WARN') counterWarn++;
-    if (graficoLog[i].method === 'ERROR') counterError++;
-    if (graficoLog[i].method === 'FATAL') counterFatal++;
-    // data.push({dia},counterTrace,counterDebug,counterInfo,counterSuccess,counterWarn,counterError,counterFatal])
-    // dia++;
-  }
 
-export const data = [
+  graficoLog.map(function(dado){
+    if (dado.date=== new Date(ano, mes)){
+      if (dado.date===new Date(ano,mes,dia)){
+        for (let i = 0; i < graficoLog.length; i++) {
+          if (graficoLog[i].method === 'TRACE') counterTrace++;
+          if (graficoLog[i].method === 'DEBUG') counterDebug++;
+          if (graficoLog[i].method === 'INFO') counterInfo++;
+          if (graficoLog[i].method === 'SUCCESS') counterSuccess++;
+          if (graficoLog[i].method === 'WARN') counterWarn++;
+          if (graficoLog[i].method === 'ERROR') counterError++;
+          if (graficoLog[i].method === 'FATAL') counterFatal++;
+          return(
+            setGrafico(...+[dia.toString,counterTrace,counterDebug,counterInfo,counterSuccess,counterWarn,counterError,counterFatal])
+          )
+      }}}};
+
+
+
+  
+  // for (let i = 0; i < graficoLog.length; i++) {
+  //   if (graficoLog[i].method === 'TRACE') counterTrace++;
+  //   if (graficoLog[i].method === 'DEBUG') counterDebug++;
+  //   if (graficoLog[i].method === 'INFO') counterInfo++;
+  //   if (graficoLog[i].method === 'SUCCESS') counterSuccess++;
+  //   if (graficoLog[i].method === 'WARN') counterWarn++;
+  //   if (graficoLog[i].method === 'ERROR') counterError++;
+  //   if (graficoLog[i].method === 'FATAL') counterFatal++;
+  //   // data = [...+[dia.toString,counterTrace,counterDebug,counterInfo,counterSuccess,counterWarn,counterError,counterFatal]]
+  //   // dia = dia +1;
+  // }
+
+export let data = [
   ["Dia", "TRACE", "DEBUG", "INFO", "SUCCESS", "WARN", "ERROR", "FATAL"],
-  ["01", 1,2,3,5,4,6,7]
-  // ["02", counterTrace,counterDebug,counterInfo,counterSuccess,counterWarn,counterError,counterFatal],
+  ["01", 1,2,3,5,4,6,7],
+  ["02", counterTrace,counterDebug,counterInfo,counterSuccess,counterWarn,counterError,counterFatal],
   // ["03", 1,2,3,5,4,6,7],
   // ["04", 5,2,6,8,4,5,9],
   // ["05", 1,2,3,5,4,6,7],
@@ -59,6 +79,7 @@ export const data = [
   // ["31", 1,2,3,5,4,6,7],
 ];
 
+
 export const options = {
   title: "Requisições",
   hAxis: { title: "Dia", titleTextStyle: { color: "#333" } },
@@ -67,13 +88,32 @@ export const options = {
 };
 
 export function Grafico() {
+
+  const [ano, setAno] = useState('');
+  const [mes,setMes] = useState('');
+  const [grafico, setGrafico] = useState([]);
+
+  
+
   return (
+    <>
+    <label>Ano</label>
+    <input onChange={(e)=>{
+          setAno(e.target.value)          
+          }}></input>
+    <label>Mes</label>
+    <input onChange={(e)=>{
+          setMes(e.target.value)          
+          }}></input>
+    <p>{ano} - {mes}</p>
+
     <Chart
       chartType="AreaChart"
       width="100%"
       height="250px"
       data={data}
       options={options}
-    />
+      />
+      </>
   );
 }
