@@ -45,6 +45,17 @@ function App() {
     setDados(res)
   }
 
+  function mostrarGrafico(grafico){
+    if (grafico === false)
+      return(
+        <GraficoTodos></GraficoTodos>
+      )
+    if (grafico === true)
+    return(
+      <Grafico></Grafico>
+    )
+  }
+
 //
 
   return (
@@ -88,7 +99,7 @@ function App() {
         </Col>
 
         <Col lg={1.5}>
-        <Button variant="info" onClick={()=>{busca('TODOS')}}> TOTAL: {counterTotal}</Button>
+        <Button variant="warning" onClick={()=>{busca('TODOS')}}> TOTAL: {counterTotal}</Button>
         </Col>
         <Col lg={1.5}>
         <Button variant="danger" onClick={()=>{busca('ERRO')}}> ERROS: {counterErro}</Button>
@@ -97,20 +108,32 @@ function App() {
         <Button variant="primary" onClick={()=>{busca('DEBUG')}}> DEBUGS : {counterDebug}</Button>
         </Col>
         <Col lg={1.5}>
-        <Button variant="warning" onClick={()=>{busca('INFO')}}> INFO: {counterInfo}</Button>
+        <Button variant="success" onClick={()=>{busca('INFO')}}> INFO: {counterInfo}</Button>
         </Col>
         <br></br>
         
         </Navbar>
-        <Button>Total</Button>
+        <Button
+          variant="dark" 
+          onClick={()=>{
+          setGrafico(false)
+        }
+        }>Total</Button>
 
-        <Button>Por tipo</Button>
+        <Button
+          variant="dark" 
+          onClick={()=>{
+          setGrafico(true)
+        }
+        }>Por tipo</Button>
 
         <p>{filtroInput}</p>
+
+        {mostrarGrafico(grafico)}
     
-        <Grafico></Grafico>
+        {/* <Grafico></Grafico>
     
-        <GraficoTodos></GraficoTodos>
+        <GraficoTodos></GraficoTodos> */}
     
 
 
@@ -150,7 +173,7 @@ function App() {
             return (
               <tbody>
               <tr>
-                <td className='table-warning' >{dado.type}</td>
+                <td className='table-success' >{dado.type}</td>
                 <td >{dado.data}</td>
                 <td >{dado.time}</td>
                 <td >{dado.mensagem}</td>
