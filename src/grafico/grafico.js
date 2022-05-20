@@ -73,12 +73,12 @@ export const options = {
 export function Grafico() {
 
   const [ano, setAno] = useState(2022);
-  const [mes,setMes] = useState(1);
+  const [mes,setMes] = useState(5);
   const [grafico, setGrafico] = useState(data);
 
   graficoLog.map(function(dado){
     if (dado.date=== new Date(ano, mes)){
-      if (dado.date=== new Date(ano,mes,dia) && dia <= 31){ 
+      while (dado.date=== new Date(ano,mes,dia) && dia <= 31) { 
           if (dado.method === 'TRACE') counterTrace++;
           if (dado.method === 'DEBUG') counterDebug++;
           if (dado.method === 'INFO') counterInfo++;
@@ -108,7 +108,7 @@ export function Grafico() {
       chartType="AreaChart"
       width="100%"
       height="250px"
-      data={data}
+      data={grafico}
       options={options}
       />
       </>
