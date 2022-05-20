@@ -8,7 +8,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "TRACE",
+        "type": "TRACE",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -21,7 +21,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "TRACE",
+        "type": "TRACE",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -34,7 +34,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "TRACE",
+        "type": "TRACE",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -47,7 +47,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "TRACE",
+        "type": "TRACE",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -60,7 +60,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "TRACE",
+        "type": "TRACE",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -73,7 +73,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "DEBUG",
+        "type": "DEBUG",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -86,7 +86,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "DEBUG",
+        "type": "DEBUG",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -99,7 +99,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "DEBUG",
+        "type": "DEBUG",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -112,7 +112,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "DEBUG",
+        "type": "DEBUG",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -125,7 +125,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "INFO",
+        "type": "INFO",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -138,7 +138,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "INFO",
+        "type": "INFO",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -151,7 +151,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "INFO",
+        "type": "INFO",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -164,7 +164,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "SUCCESS",
+        "type": "SUCCESS",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -177,7 +177,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "SUCCESS",
+        "type": "SUCCESS",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -190,7 +190,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "SUCCESS",
+        "type": "SUCCESS",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -203,7 +203,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "SUCCESS",
+        "type": "SUCCESS",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -216,7 +216,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "WARN",
+        "type": "WARN",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -229,7 +229,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "WARN",
+        "type": "WARN",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -242,7 +242,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "WARN",
+        "type": "WARN",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -255,7 +255,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "FATAL",
+        "type": "FATAL",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -268,7 +268,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "FATAL",
+        "type": "FATAL",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -281,7 +281,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "FATAL",
+        "type": "FATAL",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -294,7 +294,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "FATAL",
+        "type": "FATAL",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -307,7 +307,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "FATAL",
+        "type": "FATAL",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -320,7 +320,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "FATAL",
+        "type": "FATAL",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -333,7 +333,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "FATAL",
+        "type": "FATAL",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -346,7 +346,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "ERROR",
+        "type": "ERROR",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -359,7 +359,20 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "ERROR",
+        "type": "ERROR",
+        "status_code": {
+            "code": 200,
+            "description": "OK"
+        },
+        "duration": 90
+    }, 
+    {
+        "date": "2022-05-22",
+        "time": "09:22:00",
+        "ip": "192.168.1.1",
+        "user_agent": "DATA_HTTP",
+        "url": "http://lmsistemas.com.br/api/v1/clientes",
+        "type": "ERROR",
         "status_code": {
             "code": 200,
             "description": "OK"
@@ -372,7 +385,7 @@ export let graficoLog =
         "ip": "192.168.1.1",
         "user_agent": "DATA_HTTP",
         "url": "http://lmsistemas.com.br/api/v1/clientes",
-        "method": "ERROR",
+        "type": "ERROR",
         "status_code": {
             "code": 200,
             "description": "OK"
