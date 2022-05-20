@@ -89,7 +89,7 @@ export function Grafico() {
           setGrafico([...+[dia.toString,counterTrace,counterDebug,counterInfo,counterSuccess,counterWarn,counterError,counterFatal]]);
           dia = dia + 1;
       }}
-    }
+    })
 
 
   return (
