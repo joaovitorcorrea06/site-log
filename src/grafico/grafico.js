@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button, Row } from "react-bootstrap";
 import { Chart } from "react-google-charts";
 import { graficoLog } from "./grafico-log";
 
@@ -203,7 +204,6 @@ export function Grafico() {
     //       setMes(e.target.value)          
     //       }}></input>
     // <p>{ano} - {mes}</p>
-
     <Chart
       chartType="AreaChart"
       width="100%"
@@ -211,6 +211,5 @@ export function Grafico() {
       data={dataShow}
       options={options}
       />
-      // </>
   );
 }
