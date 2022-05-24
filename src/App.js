@@ -5,6 +5,13 @@ import { useState } from 'react';
 import { Chart } from "react-google-charts";
 import { Grafico } from './grafico/grafico';
 import { GraficoTodos } from './grafico/grafico-todos'
+import { GraficoDebug } from './grafico/grafico-debug';
+import { GraficoErro } from './grafico/grafico-erro';
+import { GraficoTrace } from './grafico/grafico-trace';
+import { GraficoInfo } from './grafico/grafico-info';
+import { GraficoSuccess } from './grafico/grafico-success';
+import { GraficoWarn } from './grafico/grafico-warn';
+import { GraficoFatal } from './grafico/grafico-fatal';
 
 function App() {
 
@@ -16,7 +23,7 @@ function App() {
   const [filtro, setfiltro] = useState('TODOS');
   const [Dados, setDados] = useState(listarLog);
   const [filtroInput, setFiltroInput] = useState('');
-  const [grafico, setGrafico] = useState(true);
+  const [grafico, setGrafico] = useState("TIPO");
 
   
 
@@ -46,13 +53,41 @@ function App() {
   }
 
   function mostrarGrafico(grafico){
-    if (grafico === false)
+    if (grafico === "TOTAL")
       return(
         <GraficoTodos></GraficoTodos>
       )
-    if (grafico === true)
+    if (grafico === "TIPO")
     return(
       <Grafico></Grafico>
+    )
+    if (grafico === "DEBUG")
+    return(
+      <GraficoDebug></GraficoDebug>
+    )
+    if (grafico === "ERROR")
+    return(
+      <GraficoErro></GraficoErro>
+    )
+    if (grafico === "TRACE")
+    return(
+      <GraficoTrace></GraficoTrace>
+    )
+    if (grafico === "INFO")
+    return(
+      <GraficoInfo></GraficoInfo>
+    )
+    if (grafico === "SUCCESS")
+    return(
+      <GraficoSuccess></GraficoSuccess>
+    )
+    if (grafico === "WARN")
+    return(
+      <GraficoWarn></GraficoWarn>
+    )
+    if (grafico === "FATAL")
+    return(
+      <GraficoFatal></GraficoFatal>
     )
   }
 
@@ -113,23 +148,76 @@ function App() {
         <br></br>
         
         </Navbar>
+        <Row className= "justify-content-center">
         <Button
           variant="dark" 
           onClick={()=>{
-          setGrafico(false)
+          setGrafico("TOTAL")
         }
         }>Total</Button>
 
         <Button
           variant="dark" 
           onClick={()=>{
-          setGrafico(true)
+          setGrafico("TIPO")
         }
         }>Por tipo</Button>
+
+        <Button
+          variant="dark" 
+          onClick={()=>{
+          setGrafico("DEBUG")
+        }
+        }>DEBUG</Button>
+
+        <Button
+          variant="dark" 
+          onClick={()=>{
+          setGrafico("ERROR")
+        }
+        }>ERROR</Button>
+
+        <Button
+          variant="dark" 
+          onClick={()=>{
+          setGrafico("TRACE")
+        }
+        }>TRACE</Button>
+
+        <Button
+          variant="dark" 
+          onClick={()=>{
+          setGrafico("INFO")
+        }
+        }>INFO</Button>
+
+        <Button
+          variant="dark" 
+          onClick={()=>{
+          setGrafico("SUCCESS")
+        }
+        }>SUCCESS</Button>
+
+        <Button
+          variant="dark" 
+          onClick={()=>{
+          setGrafico("WARN")
+        }
+        }>WARN</Button>
+
+        <Button
+          variant="dark" 
+          onClick={()=>{
+          setGrafico("FATAL")
+        }
+        }>FATAL</Button>
+        </Row>
 
         <p>{filtroInput}</p>
 
         {mostrarGrafico(grafico)}
+
+        {/* <GraficoDebug></GraficoDebug> */}
     
         {/* <Grafico></Grafico>
     
