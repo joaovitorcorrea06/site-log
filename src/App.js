@@ -153,7 +153,7 @@ function App() {
 
         <Row className= "justify-content-center">
         <Button
-          className='mr-3'
+          className='mr-3 rounded-circle'
           variant="dark" 
           onClick={()=>{
           setGrafico("TOTAL")
