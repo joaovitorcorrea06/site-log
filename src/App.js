@@ -148,8 +148,12 @@ function App() {
         <br></br>
         
         </Navbar>
+
+        <br></br>
+
         <Row className= "justify-content-center">
         <Button
+          className='mr-3'
           variant="dark" 
           onClick={()=>{
           setGrafico("TOTAL")
@@ -157,6 +161,7 @@ function App() {
         }>Total</Button>
 
         <Button
+          className='mr-3'
           variant="dark" 
           onClick={()=>{
           setGrafico("TIPO")
@@ -164,6 +169,7 @@ function App() {
         }>Por tipo</Button>
 
         <Button
+          className='mr-3'
           variant="dark" 
           onClick={()=>{
           setGrafico("DEBUG")
@@ -171,6 +177,7 @@ function App() {
         }>DEBUG</Button>
 
         <Button
+          className='mr-3'
           variant="dark" 
           onClick={()=>{
           setGrafico("ERROR")
@@ -178,6 +185,7 @@ function App() {
         }>ERROR</Button>
 
         <Button
+          className='mr-3'
           variant="dark" 
           onClick={()=>{
           setGrafico("TRACE")
@@ -185,6 +193,7 @@ function App() {
         }>TRACE</Button>
 
         <Button
+          className='mr-3'
           variant="dark" 
           onClick={()=>{
           setGrafico("INFO")
@@ -192,6 +201,7 @@ function App() {
         }>INFO</Button>
 
         <Button
+          className='mr-3'
           variant="dark" 
           onClick={()=>{
           setGrafico("SUCCESS")
@@ -199,6 +209,7 @@ function App() {
         }>SUCCESS</Button>
 
         <Button
+          className='mr-3'
           variant="dark" 
           onClick={()=>{
           setGrafico("WARN")
@@ -206,6 +217,7 @@ function App() {
         }>WARN</Button>
 
         <Button
+          className='mr-3'
           variant="dark" 
           onClick={()=>{
           setGrafico("FATAL")
